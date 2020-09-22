@@ -1,11 +1,11 @@
 import java.awt.Container
 
 fun main() {
-    val account01 = Account("Andressa", 1)
+    val account01 = Account(accountHolder = "Andressa", accountNumber =  1)
     account01.deposit(2000.0)
     account01.withdraw(1000.0)
 
-    val account02 = Account("Omar", 2)
+    val account02 = Account(accountNumber = 2, accountHolder =  "Omar")
     account02.deposit(1500.0)
     account02.withdraw(500.0)
 
@@ -56,7 +56,7 @@ fun main() {
 }
 
 //primary constructor, as we would pass parameters to a class
-class Account(var accountHolder: String, var accountNumber: Int) {
+class Account(var accountHolder: String, val accountNumber: Int = 0) {
     //must initialize the variable as soon as it is declared if type is not specified
     //val accountHolder = "Andressa"
     //var = General variable. Mutable and can be assigned multiple times.
